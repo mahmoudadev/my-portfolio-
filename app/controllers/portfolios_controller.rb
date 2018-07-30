@@ -19,6 +19,34 @@ class PortfoliosController < ApplicationController
 
   end
 
+  def edit
+    @portfolio = Portfolio.find(params[:id])
+  end
+
+  def update
+    @portfolio = Portfolio.find(params[:id])
+
+    if @portfolio.update(portfolio_params)
+      flash[:notice] = "updated successfully"
+      redirect_to @portfolio
+    else
+      render 'edit'
+    end
+
+  end
+
+  def show
+    @portfolio = Portfolio.find(params[:id])
+  end
+
+  def destroy
+    @portfolio = Portfolio.find(params[:id])
+    if @portfolio.destroy
+      flash[:notice] = "Portfolio has been deleted!"
+      redirect_to  portfolios_path
+    end
+  end
+
 
 
   private

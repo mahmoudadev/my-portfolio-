@@ -1,0 +1,8 @@
+<div id="notice">
+  <%= notice %>
+</div>
+
+<h2> <%= @portfolio.title %></h2>
+<h5> <%= @portfolio.subtitle %></h5>
+<p> <%= @portfolio.body %></p>
+ <%= image_tag  @portfolio.main_image unless @portfolio.main_image.nil? %>

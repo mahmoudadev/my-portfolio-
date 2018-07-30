@@ -1,3 +1,5 @@
+<p> <%= notice %></p>
+
 <h1>My Portfolio Items</h1>
 
 <% @portfolios.each do |item| %>
@@ -6,6 +8,10 @@
   <p> <%= item.subtitle.titleize  %></p>
   <p> <%= item.body  %></p>
   <%= image_tag item.thumb_image unless item.thumb_image.nil? %>
-
-
+  <div class="actions">
+    <%= link_to "Edit", edit_portfolio_path(item) %>
+    <%= link_to "Show", portfolio_path(item) %>
+    <%= link_to "Delete", portfolio_path(item), method: :delete, data: {confirm: "Are you Sure?"} %>
+  </div>
+  <hr>
 <% end %>
