@@ -5,7 +5,7 @@
   <h2> <%= item.title.titleize %> </h2>
   <p> <%= item.subtitle.titleize  %></p>
   <p> <%= item.body  %></p>
-  <%= image_tag item.thumb_image %>
+  <%= image_tag item.thumb_image unless item.thumb_image.nil? %>
 
 
 <% end %>
