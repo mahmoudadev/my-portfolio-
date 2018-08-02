@@ -10,5 +10,12 @@ module ApplicationHelper
 
   end
 
+  def source_helper
+    if session[:source]
+      greeting = "Thanks for Visiting us from #{session[:source]}"
+      content_tag(:h4, greeting , class:"")
+    end
+  end
+
 
 end
