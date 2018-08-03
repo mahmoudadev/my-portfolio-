@@ -19,9 +19,9 @@
 <%= render "shared/nav" %>
 
 <%= login_helper %>
+<h3>HI, <%= current_user.first_name unless current_user.blank? %></h3>
 
 <%= yield %>
-<h3>HI, <%= current_user.first_name unless current_user.blank? %></h3>
 
 
 <%= source_helper %>

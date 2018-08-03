@@ -1,0 +1,10 @@
+<h2> <%= portfolio.title.titleize %> </h2>
+<p> <%= portfolio.subtitle.titleize  %></p>
+<p> <%= portfolio.body  %></p>
+<%= image_tag portfolio.thumb_image unless portfolio.thumb_image.nil? %>
+<div class="actions">
+  <%= link_to "Edit", edit_portfolio_path(portfolio) %>
+  <%= link_to "Show", portfolio_path(portfolio) %>
+  <%= link_to "Delete", portfolio_path(portfolio), method: :delete, data: {confirm: "Are you Sure?"} %>
+</div>
+<hr>
